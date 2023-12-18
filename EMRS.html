@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGMC Electronic Medical Record System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>UGMC Electronic Medical Record System</h2>
+
+    <!-- Patient Registration Form -->
+    <form id="patientRegistrationForm">
+        <h3>Patient Registration</h3>
+        <label for="patientID">Patient ID:</label>
+        <input type="text" id="patientID" name="patientID" required>
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required>
+
+        <label for="otherNames">Other Names:</label>
+        <input type="text" id="otherNames" name="otherNames" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Residential Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="emergencyName">Emergency Contact Name:</label>
+        <input type="text" id="emergencyName" name="emergencyName" required>
+
+        <label for="emergencyContact">Emergency Contact Number:</label>
+        <input type="tel" id="emergencyContact" name="emergencyContact" required>
+
+        <label for="relationship">Relationship with Patient:</label>
+        <input type="text" id="relationship" name="relationship" required>
+
+        <button type="button" onclick="registerPatient()">Register Patient</button>
+    </form>
+
+    <!-- Encounter Form -->
+    <form id="encounterForm">
+        <h3>Start Encounter</h3>
+        <label for="encounterPatientID">Patient ID:</label>
+        <input type="text" id="encounterPatientID" name="encounterPatientID" required>
+
+        <label for="encounterDateTime">Date and Time:</label>
+        <input type="datetime-local" id="encounterDateTime" name="encounterDateTime" required>
+
+        <label for="encounterType">Type of Encounter:</label>
+        <select id="encounterType" name="encounterType" required>
+            <option value="emergency">Emergency</option>
+            <option value="opd">OPD</option>
+            <option value="specialistCare">Specialist Care</option>
+        </select>
+
+        <button type="button" onclick="startEncounter()">Start Encounter</button>
+    </form>
+
+    <!-- Vitals Submission Form -->
+    <form id="vitalsForm">
+        <h3>Submit Patient Vitals</h3>
+        <label for="vitalsPatientID">Patient ID:</label>
+        <input type="text" id="vitalsPatientID" name="vitalsPatientID" required>
+
+        <label for="bloodPressure">Blood Pressure:</label>
+        <input type="text" id="bloodPressure" name="bloodPressure" required>
+
+        <label for="temperature">Temperature:</label>
+        <input type="text" id="temperature" name="temperature" required>
+
+        <label for="pulse">Pulse:</label>
+        <input type="text" id="pulse" name="pulse" required>
+
+        <label for="spo2">SPO2:</label>
+        <input type="text" id="spo2" name="spo2" required>
+
+        <button type="button" onclick="submitVitals()">Submit Vitals</button>
+    </form>
+
+    <!-- Doctor's Section -->
+    <div id="doctorSection">
+        <h2>Doctor's Section</h2>
+
+        <!-- List of Patients -->
+        <h3>List of Patients</h3>
+        <ul id="patientList"></ul>
+
+        <!-- View Patient Details -->
+        <form id="viewPatientDetailsForm">
+            <h3>View Patient Details</h3>
+            <label for="viewPatientID">Patient ID:</label>
+            <input type="text" id="viewPatientID" name="viewPatientID" required>
+
+            <button type="button" onclick="viewPatientDetails()">View Details</button>
+        </form>
+
+        <!-- Display Patient Details -->
+        <div id="patientDetails"></div>
+    </div>
+
+    <script>
+        // Functions to handle button clicks and perform actions
+        function registerPatient() {
+            // Implement patient registration logic here
+            alert('Patient Registered!');
+        }
+
+        function startEncounter() {
+            // Implement encounter start logic here
+            alert('Encounter Started!');
+        }
+
+        function submitVitals() {
+            // Implement vitals submission logic here
+            alert('Vitals Submitted!');
+        }
+
+        function viewPatientDetails() {
+            // Implement logic to fetch and display patient details
+            const patientID = document.getElementById('viewPatientID').value;
+            const patientDetailsContainer = document.getElementById('patientDetails');
+            
+            // For demo purposes, just alert the patient ID
+            alert('Viewing details for Patient ID: ' + patientID);
+        }
+        function registerPatient() {
+        // Implement patient registration logic here
+
+        // Redirect to the specified URL after successful registration
+        window.location.href = 'https://ugmedicalcentre.org/';
+    }
+    </script>
+</body>
+</html>
